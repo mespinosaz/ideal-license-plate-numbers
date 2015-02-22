@@ -6,7 +6,7 @@ use mespinosaz\IdealLicensePlateNumbers\IdealNumberManager;
 
 class NumberCheckerTest extends \PHPUnit_Framework_TestCase
 {
-    private $checker;
+    private $manager;
 
     public function setUp()
     {
@@ -31,5 +31,10 @@ class NumberCheckerTest extends \PHPUnit_Framework_TestCase
     public function testDivision()
     {
         $this->assertTrue($this->manager->isIdeal(9331));
+    }
+
+    public function testNotIdeal()
+    {
+        $this->assertFalse($this->manager->isIdeal(9781));
     }
 }

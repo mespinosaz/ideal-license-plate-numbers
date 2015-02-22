@@ -3,7 +3,7 @@
 namespace mespinosaz\IdealLicensePlateNumbers;
 
 use mespinosaz\Combinatorics\Permutations;
-use mespinosaz\IdealLicensePlateNumbers\Operation;
+use mespinosaz\IdealLicensePlateNumbers\OperationInterface;
 
 class IdealNumberManager
 {
@@ -17,11 +17,10 @@ class IdealNumberManager
 
     private function computeElements($number)
     {
-        $members = str_split($number);
-        $result = array_pop($members);
-        $memberPermutations = new Permutations($members);
+        $licenseNumber = new LicenseNumber($number);
+        $memberPermutations = new Permutations($licenseNumber->getOperators());
         $memberPermutations->removeDuplicates();
-        return array($memberPermutations, $result);
+        return array($memberPermutations, $licenseNumber->getExpectedResult());
     }
 
     private function computeOperations()

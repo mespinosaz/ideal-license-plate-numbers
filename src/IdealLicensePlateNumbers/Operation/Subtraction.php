@@ -2,9 +2,7 @@
 
 namespace mespinosaz\IdealLicensePlateNumbers\Operation;
 
-use mespinosaz\IdealLicensePlateNumbers\Operation;
-
-class Subtraction implements Operation
+class Subtraction implements OperationInterface
 {
     public function process($a, $b)
     {

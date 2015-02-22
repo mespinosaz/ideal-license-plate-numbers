@@ -2,9 +2,7 @@
 
 namespace mespinosaz\IdealLicensePlateNumbers\Operation;
 
-use mespinosaz\IdealLicensePlateNumbers\Operation;
-
-class Addition implements Operation
+class Addition implements OperationInterface
 {
     public function process($a, $b)
     {
